@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones con Mini Página</title>
+    <style>
+       body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .boton-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .mini-pagina {
+            display: none;
+            width: 400px;
+            height: 550px;
+            padding: 20px;
+            border: 1px solid #3498db;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+.mini-pagina-2{
+            display: none;
+            width: 600px;
+            height: 690px;
+            padding: 20px;
+            border: 1px solid #3498db;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+}
+        h2 {
+            color: #3498db;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .cerrar-btn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #e74c3c;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .cerrar-btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="mostrarContenido('pagina1')">JavaScript</button>
+<button onclick="mostrarContenido('pagina2')">API</button>
+
+<div id="pagina1" class="mini-pagina">
+    <h2>JavaScript</h2>
+    <p>Es un lenguaje de programación que se utiliza para que las paginas sean mas dinamicas. <br>
+    La gran diferencia de html y js es que en JavaScript tine constantes, variables y funciones. <br>
+Las constantes son elementos que tiene un valor pre determinado en cambio las variables son elementos de un valor que puede cambiar. <br>
+Algunos ejemplos number que es una variable de numero, Strings quye sirve como cadena de texto es otra variable, <br>
+Las funciones nos permiten agrupar líneas de código en tareas con un nombre, para que, posteriormente, podamos hacer referencia a ese nombre para realizar todo lo que se agrupe en dicha tarea. <br>
+ Hay dos tipos de funciones declarar y ejecutar. <br>
+Ejemplos console.log(): muestra un mensaje o valor en la consola del navegador, alert(): muestra un cuadro de diálogo con un mensaje en el navegador. <br>
+DOM es un interfaz de programacion que representa la estructura html y eso nos permite manipularlos dentro del JS. <br>
+Ejemplos getElementById, getElementByclassname, getelementbytagname.</p>
+    <button onclick="cerrarMiniPagina('pagina1')">Cerrar</button>
+</div>
+
+<div id="pagina2" class="mini-pagina-2">
+    <h2>API</h2>
+    <p>Una API (Interfaz de Programación de Aplicaciones) es un conjunto de reglas y protocolos que permite que diferentes aplicaciones se comuniquen entre sí. <br>
+        APIs Web: Son APIs que permiten la comunicación entre aplicaciones a través de Internet. Pueden ser públicas o privadas y se utilizan para acceder a servicios en línea. <br>
+        APIs de Biblioteca: Son APIs que proporcionan conjuntos de funciones y procedimientos que pueden ser utilizados por programas escritos en el mismo lenguaje de programación. <br>
+        APIs de Sistema Operativo: Permiten que las aplicaciones accedan a recursos del sistema operativo, como archivos y hardware. <br>
+        - Endpoint: En una API, un endpoint es una URL específica que representa un recurso o una función. <br>
+        - Autenticación: Para acceder a muchas APIs, es necesario autenticarse mediante tokens, claves de API o credenciales de usuario. <br>
+        - Solicitud y Respuesta: Para interactuar con una API, una aplicación hace una solicitud HTTP (por ejemplo, GET) al endpoint correspondiente y recibe una respuesta en formato JSON, XML u otro formato. <br>
+        La función fetch es una función de JavaScript que se utiliza para realizar solicitudes de red, generalmente para obtener recursos desde un servidor web. <br>
+        1. **Realizar Solicitudes de Red:** **`fetch`** se utiliza para realizar solicitudes HTTP (GET, POST, PUT, DELETE, etc.) a una URL específica. Puedes especificar la URL de destino como argumento de la función **`fetch`**. <br>
+        2. **Solicitud Asíncrona:** La función **`fetch`** realiza solicitudes de manera asíncrona, lo que significa que no bloquea la ejecución del resto del código mientras espera la respuesta del servidor. Esto es esencial para evitar que la interfaz de usuario se congele mientras se espera una respuesta del servidor. <br>
+        3. **Promesas:** **`fetch`** devuelve una promesa. Una promesa es un objeto que representa un valor que puede estar disponible ahora, en el futuro o nunca. Puedes utilizar los métodos **`then`** y **`catch`** en la promesa devuelta por **`fetch`** para manejar la respuesta de la solicitud. <br>
+     </p>
+    <button onclick="cerrarMiniPagina('pagina2')">Cerrar</button>
+</div>
+
+<script>
+    function mostrarContenido(id) {
+        document.getElementById(id).style.display = 'block';
+    }
+
+    function cerrarMiniPagina(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
